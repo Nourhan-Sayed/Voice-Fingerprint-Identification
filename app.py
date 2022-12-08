@@ -5,6 +5,7 @@ import numpy as np
 import os
 import wave
 import pyaudio
+import speech_recognition as sr
 
 
 def record_audio_test():
@@ -35,8 +36,30 @@ def record_audio_test():
 	waveFile.setframerate(RATE)
 	waveFile.writeframes(b''.join(Recordframes))
 	waveFile.close()
-    
+	r = sr.Recognizer()
+	try:                
+			file = sr.AudioFile(r"C:\Users\hazem\DSP_Door_Lock_Task_3\record\Record.wav")
+			with file as source:
+				audio = r.record(source)
+				# Using google to recognize audio
+			MyText = r.recognize_google(audio)
+			MyText = MyText.lower()          
+	except sr.RequestError as e:
+			print("Could not request results; {0}".format(e))  
+			MyText="request error"        
+	except sr.UnknownValueError:
+			print("unknown error occurred")
+			MyText="could not recognize"
+	if MyText=="open the door":
+		output=1
+	else:
+		output=0
+	print(MyText)
+	print(output)
+	return output
 
+	
+	
 
 # import model
 flasklink = Flask(__name__)
@@ -49,7 +72,8 @@ def index():
 
 @flasklink.route('/link',  methods=['GET', 'POST'])
 def link():
-    record_audio_test()
+    output=record_audio_test()
+	
     return render_template('Home.html', custom_css = "home")
 
 
