@@ -1,0 +1,161 @@
+
+body {
+    background: -webkit-gradient(linear, left top, left bottom, from(#2C3E50), to(#4CA1AF)) fixed;
+}
+
+html{
+    scroll-behavior: smooth;
+  }
+
+  
+
+
+#first, #second{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+#first_wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 19rem;
+    padding: 1%;
+}
+#first{
+    width: 50%;
+    background-color:rgb(12 49 74 / 40%);
+    margin-right: 27%;
+    border-radius: 4rem;
+    height: 18rem;
+    color: rgba(240, 248, 255, 0.5);
+    z-index: -5;
+}
+
+
+#second{
+    width: 50%;
+    background-color: rgb(12 49 74 / 40%);
+    border-radius: 4rem;
+    height: 18rem;
+    z-index: -5;
+}
+
+#second_wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 19rem;
+}
+#third{
+    width: 50%;
+    background-color: rgb(12 49 74 / 40%);
+    border-radius: 4rem;
+    margin-right: 27%;
+    height: 18rem;
+    z-index: -5;
+}
+#forth{
+    width: 50%;
+    background-color: rgb(12 49 74 / 40%);
+    border-radius: 4rem;
+    height: 18rem;
+    z-index: -5;
+}
+
+
+.box {
+    width: 37%;
+    margin-top: -29rem;
+    margin-left: 28rem;
+    height: 22rem;
+    position: relative;
+    box-shadow: 10px 10px 42px 0 rgb(43 73 95);
+}
+
+
+.box:after, .box:before{
+	mix-blend-mode:multiply;
+	filter:none;
+	z-index: -1;
+	content:'';
+	width:calc(100% + (50px * 2));
+	height:calc(100% + (50px * 2));
+	position: absolute;
+	display: block;
+	animation: border 10s ease-in-out infinite;
+	transform:translateX(-50px) translateY(-50px);
+}
+@keyframes border {
+  0%, 100% {
+    -webkit-clip-path: polygon(0 0, calc(100% - (33.3333333333px)) calc(0% + (33.3333333333px)), 100% 100%, calc(0% + (33.3333333333px)) calc(100% - (33.3333333333px)));
+            clip-path: polygon(0 0, calc(100% - (33.3333333333px)) calc(0% + (33.3333333333px)), 100% 100%, calc(0% + (33.3333333333px)) calc(100% - (33.3333333333px)));
+  }
+  50% {
+    -webkit-clip-path: polygon(calc(0% + (33.3333333333px)) calc(0% + (33.3333333333px)), 100% 0, calc(100% - (33.3333333333px)) calc(100% - (33.3333333333px)), 0 100%);
+            clip-path: polygon(calc(0% + (33.3333333333px)) calc(0% + (33.3333333333px)), 100% 0, calc(100% - (33.3333333333px)) calc(100% - (33.3333333333px)), 0 100%);
+  }
+}
+
+.box:after{
+	animation-delay: -5s;
+	background-color: #2b5e84;
+	clip-path: polygon(0 0, calc(100% - (33.3333333333px)) calc(0% + (33.3333333333px)), 100% 100%, calc(0% + (33.3333333333px)) calc(100% - (33.3333333333px)));
+}
+.box:before {
+	background-color: #2b5e84;
+	  clip-path: polygon(calc(0% + (33.3333333333px)) calc(0% + (33.3333333333px)), 100% 0, calc(100% - (33.3333333333px)) calc(100% - (33.3333333333px)), 0 100%);
+}
+
+img.animated-gif{
+    width: 32%;
+    margin-left: 33%;
+    margin-top: -21%;
+}
+
+.record {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 100%;
+    margin-left: 46%;
+    position: relative;
+    top: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #2b5e84;
+    padding: 22px;
+    transition-duration: 0.8s;
+    box-shadow: 0 5px 15px #193047;
+}
+
+.record:hover {
+    background: #fff;
+    box-shadow: 0px 2px 10px 5px #71d8eb;
+    color: #14354e;
+  }
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&family=Calligraffitti&display=swap');
+.title{
+    font-family: 'Calligraffitti', cursive;
+    font-weight: 700;
+    font-size: 7rem;
+    z-index: 3;
+    position: absolute;
+    text-shadow: -15px 5px 20px #ced0d3;
+    top: 10%;
+    left: 49%;
+    transform: translate(-50%,-50%);
+    letter-spacing: 0.2em;
+    text-align: center;
+    color: #fff;
+    text-shadow: 5px 5px 0px #90b1e0, 10px 10px 0px #ced0d3, 15px 15px 0px #71d8eb, 20px 20px 0px #6868ac, 25px 25px 0px #6868ac, 30px 30px 0px #90b1e0;
+}
+
+
+
+
+
+ 
+
+
+
+
