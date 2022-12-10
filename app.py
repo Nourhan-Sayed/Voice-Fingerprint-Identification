@@ -23,6 +23,7 @@ def index():
 def link():
 
     record_audio_test()
+    encoded_img_data=create_spectogram_img()
 
     team_flag ,member_name = test_model("people")
     if (team_flag) :
@@ -39,7 +40,7 @@ def link():
             sentence_flag =False
     else :
         print("Access Denied")
-    return render_template('Home.html', custom_css = "home")
+    return render_template('Home.html', custom_css = "home",img_data=encoded_img_data.decode('utf-8'))
 
 
 # run our programe

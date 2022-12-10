@@ -16,6 +16,14 @@ from sklearn import preprocessing
 from scipy.io.wavfile import read
 import python_speech_features as mfcc
 from sklearn.mixture import GaussianMixture 
+import librosa
+import librosa.display
+from io import BytesIO
+import base64
+import numpy as np
+from PIL import Image
+import io
+import matplotlib.pyplot as plt
 
 def record_audio_test():
 	FORMAT = pyaudio.paInt16
@@ -134,3 +142,18 @@ def test_model(model_name):
     print("#"*50)
     time.sleep(1.0)  
     return acess ,member_name 
+
+def create_spectogram_img():
+        y, samplerate = librosa.load('record/Record.wav')
+        D = librosa.stft(y)  # STFT of y
+        S_db = librosa.amplitude_to_db(np.abs(D), ref=np.max)
+        figure=plt.figure()
+        librosa.display.specshow(S_db)
+        plt.colorbar()
+        plt.savefig('static/images/spec.png')
+        plt.close()
+        im = Image.open("static/images/spec.png")
+        data = io.BytesIO()
+        im.save(data, "PNG")
+        encoded_img_data = base64.b64encode(data.getvalue())
+        return encoded_img_data

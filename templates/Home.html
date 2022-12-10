@@ -16,13 +16,21 @@
     
     <div class="title">Soundify</div>
 
+
     <div id="first_wrapper">
-        <div id="first"></div>
+        <div id="first">          
+        </div>
         <div id="second"></div>
     </div>
 
     <div id="second_wrapper">
-        <div id="third"></div>
+        <div id="third">
+            {%if img_data %}
+            <body>
+                <img id="picture" src="data:image/png;base64,{{ img_data }}">
+            </body>
+            {%endif %}
+        </div>
         <div id="forth"></div>
     </div>
 
