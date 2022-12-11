@@ -36,14 +36,14 @@
     </div>
 
     <div class="box"></div>
-    <img class="animated-gif" src="{{url_for('static', filename= 'Css/img/door_gif.gif')}}" alt="gif">
+    <img class="animated-gif" id="gif" src=# alt="gif">
 
     <div class="typing_wrapper">
     <div class="typing-demo" id="test"></div>
     </div> 
      
     <form action="/link" method="POST" id="Button">
-        <button class=" record " type="submit">Record <i class="fa fa-microphone" style="font-size:48px;color:#2b5e84"></i></button>
+        <button class=" record " type="submit" onclick="compareStr()">Record <i class="fa fa-microphone" style="font-size:48px;color:#2b5e84"></i></button>
     </form>
     <script>
         function compareStr() {
@@ -55,7 +55,8 @@
            var result2 = string1.localeCompare(string3);
            if(result1==0){
                if(result2==0){
-                document.getElementById("test").innerHTML = "Hello {{Member_Name}}";  
+                document.getElementById("test").innerHTML = "Hello {{Member_Name}}";
+                document.getElementById("gif").src = "Css/img/doo";  
                }
                else{
                 document.getElementById("test").innerHTML = "Hello {{Member_Name}}";
@@ -66,7 +67,6 @@
            }
         }
      </script>
-
 
     <!-- <h1 id="title"> Welcome to ,<br> Sound Recognization App !!</h1>
     <h2 id="wanna">Press to Check</h2>
