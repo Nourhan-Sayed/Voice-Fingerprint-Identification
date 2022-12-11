@@ -64,10 +64,10 @@ html{
 
 
 .box {
-    width: 37%;
-    margin-top: -29rem;
-    margin-left: 28rem;
-    height: 22rem;
+    width: 33%;
+    margin-top: -32rem;
+    margin-left: 30rem;
+    height: 20rem;
     position: relative;
     box-shadow: 10px 10px 42px 0 rgb(43 73 95);
 }
@@ -137,11 +137,11 @@ img.animated-gif{
 .title{
     font-family: 'Calligraffitti', cursive;
     font-weight: 700;
-    font-size: 7rem;
+    font-size: 6rem;
     z-index: 3;
     position: absolute;
     text-shadow: -15px 5px 20px #ced0d3;
-    top: 10%;
+    top: 7%;
     left: 49%;
     transform: translate(-50%,-50%);
     letter-spacing: 0.2em;
@@ -150,6 +150,39 @@ img.animated-gif{
     text-shadow: 5px 5px 0px #90b1e0, 10px 10px 0px #ced0d3, 15px 15px 0px #71d8eb, 20px 20px 0px #6868ac, 25px 25px 0px #6868ac, 30px 30px 0px #90b1e0;
 }
 
+.typing_wrapper{
+    background-image: url(img/digital_screen.jpg);
+    width: 24%;
+    height: 3rem;
+    margin-top: 2%;
+    margin-left: 38%;
+}
+.typing-demo {
+    width: 16ch;
+    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: fantasy;
+    font-size: 2em;
+    height: 3rem;
+    margin-top: 2%;
+    margin-left: 13%;
+    padding: 1%;
+    color: aliceblue;
+    text-align: center;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }
 
 
 

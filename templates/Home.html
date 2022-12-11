@@ -11,26 +11,61 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Lobster&family=Ms+Madi&family=Playfair+Display:ital,wght@1,400;1,500&family=Sansita+Swashed&family=Tapestry&family=Truculenta:opsz,wght@12..72,700&family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body  onload="compareStr()">
     
     <div class="title">Soundify</div>
 
+
     <div id="first_wrapper">
-        <div id="first"></div>
+        <div id="first">          
+        </div>
         <div id="second"></div>
     </div>
 
     <div id="second_wrapper">
-        <div id="third"></div>
+        <div id="third">
+            {%if img_data %}
+            <body>
+                <img id="picture" src="data:image/png;base64,{{ img_data }}">
+            </body>
+            {%endif %}
+        </div>
         <div id="forth"></div>
     </div>
 
     <div class="box"></div>
     <img class="animated-gif" src="{{url_for('static', filename= 'Css/img/door_gif.gif')}}" alt="gif">
+
+    <div class="typing_wrapper">
+    <div class="typing-demo" id="test"></div>
+    </div> 
+     
     <form action="/link" method="POST" id="Button">
-        <button class=" record " type="submit"  >Record <i class="fa fa-microphone" style="font-size:48px;color:#2b5e84"></i></button>
+        <button class=" record " type="submit">Record <i class="fa fa-microphone" style="font-size:48px;color:#2b5e84"></i></button>
     </form>
+    <script>
+        function compareStr() {
+           var string1 = "True";
+           var string2 = "{{Team_Flag}}";
+           var string3 = "{{Sentence_Flag}}";
+           var string4 = "{{Member_Name}}";
+           var result1 = string1.localeCompare(string2);
+           var result2 = string1.localeCompare(string3);
+           if(result1==0){
+               if(result2==0){
+                document.getElementById("test").innerHTML = "Hello {{Member_Name}}";  
+               }
+               else{
+                document.getElementById("test").innerHTML = "Hello {{Member_Name}}";
+               }
+           }
+           else{
+            document.getElementById("test").innerHTML = "sorry who are you ??";
+           }
+        }
+     </script>
 
 
     <!-- <h1 id="title"> Welcome to ,<br> Sound Recognization App !!</h1>
