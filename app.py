@@ -12,7 +12,6 @@ from functions import *
 # import model
 flasklink = Flask(__name__)
 # model = pickle.load(open('MachineLearning.pkl','rb'))
-sentence_flag = False
 # team_flag= False
 
 @flasklink.route('/')
@@ -21,9 +20,8 @@ def index():
 
 @flasklink.route('/link',  methods=['GET', 'POST'])
 def link():
-
+    sentence_flag = False
     record_audio_test()
-
     team_flag ,member_name = test_model("people")
     if (team_flag) :
         print("Access Allowed")
@@ -39,7 +37,7 @@ def link():
             sentence_flag =False
     else :
         print("Access Denied")
-    return render_template('Home.html', custom_css = "home")
+    return render_template('Home.html',Team_Flag=team_flag, Member_Name=member_name,Sentence_Flag=sentence_flag, custom_css = "home")
 
 
 # run our programe
