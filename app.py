@@ -42,7 +42,7 @@ def record_audio_test():
 			with file as source:
 				audio = r.record(source)
 				# Using google to recognize audio
-			MyText = r.recognize_google(audio)
+			MyText = r.recognize_google(audio) 
 			MyText = MyText.lower()          
 	except sr.RequestError as e:
 			print("Could not request results; {0}".format(e))  
