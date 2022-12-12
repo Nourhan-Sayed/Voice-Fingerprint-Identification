@@ -26,17 +26,17 @@
 
     <div id="second_wrapper">
         <div id="third">
-            {%if img_data %}
+            <!-- {%if img_data %}
             <body>
                 <img id="picture" src="data:image/png;base64,{{ img_data }}">
             </body>
-            {%endif %}
+            {%endif %} -->
         </div>
         <div id="forth"></div>
     </div>
 
     <div class="box"></div>
-    <img class="animated-gif" id="gif" src=# alt="gif">
+    <img class="animated-gif" id="gif" src="{{url_for('static', filename= 'Css/img/first_image.JPG')}}" alt="gif">
 
     <div class="typing_wrapper">
     <div class="typing-demo" id="test"></div>
@@ -56,14 +56,16 @@
            if(result1==0){
                if(result2==0){
                 document.getElementById("test").innerHTML = "Hello {{Member_Name}}";
-                document.getElementById("gif").src = "Css/img/doo";  
+                document.getElementById("gif").src ="{{url_for('static', filename= 'Css/img/door_opened.gif')}}";  
                }
                else{
                 document.getElementById("test").innerHTML = "Hello {{Member_Name}}";
+                document.getElementById("gif").src ="{{url_for('static', filename= 'Css/img/door_closed.gif')}}";  
                }
            }
            else{
             document.getElementById("test").innerHTML = "sorry who are you ??";
+            document.getElementById("gif").src ="{{url_for('static', filename= 'Css/img/first_image.JPG')}}";  
            }
         }
      </script>
