@@ -39,7 +39,7 @@
     <img class="animated-gif" id="gif" src="{{url_for('static', filename= 'Css/img/first_image.JPG')}}" alt="gif">
 
     <div class="typing_wrapper">
-    <div class="typing-demo" id="test"></div>
+    <div class="typing-demo" id="test">Inter Password</div>
     </div> 
      
     <form action="/link" method="POST" id="Button">
@@ -59,7 +59,7 @@
                 document.getElementById("gif").src ="{{url_for('static', filename= 'Css/img/door_opened.gif')}}";  
                }
                else{
-                document.getElementById("test").innerHTML = "Hello {{Member_Name}}";
+                document.getElementById("test").innerHTML = "Try again {{Member_Name}}";
                 document.getElementById("gif").src ="{{url_for('static', filename= 'Css/img/door_closed.gif')}}";  
                }
            }
