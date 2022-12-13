@@ -56,8 +56,8 @@ def record_audio_test():
 
 def calculate_delta(array):
     rows,cols = array.shape
-    print(rows)
-    print(cols)
+    # print(rows)
+    # print(cols)
     deltas = np.zeros((rows,20))
     N = 2
     for i in range(rows):
@@ -77,83 +77,47 @@ def calculate_delta(array):
         deltas[i] = ( array[index[0][0]]-array[index[0][1]] + (2 * (array[index[1][0]]-array[index[1][1]])) ) / 10
     return deltas
 
-
 def extract_features(audio,rate):
     mfcc_feature = mfcc.mfcc(audio,rate, 0.025, 0.01,20,nfft = 1200, appendEnergy = True)    
     mfcc_feature = preprocessing.scale(mfcc_feature)
-    print(mfcc_feature)
+    # print(mfcc_feature)
     delta = calculate_delta(mfcc_feature)
     combined = np.hstack((mfcc_feature,delta)) 
     return combined
 
-
-def test_model(model_name):
-    if (model_name == "people"):
-        modelpath = "trained_models\Team_Verification" #path of trained models
-    elif(model_name == "sentence"):
-        modelpath = "trained_models\Sentence_Verification"
-
-    # source   = "record\\"  #path of test samples
-    # test_file = "record.txt"        #test samples names
-
-    # file_paths = open(test_file,'r')
+def test_model(model_name,modelpath):
     gmm_files = [os.path.join(modelpath,fname) for fname in
                 os.listdir(modelpath) if fname.endswith('.gmm')]
-
-    #Load the Gaussian gender Models
+    #Load the Gaussian mixture Models
     models    = [pickle.load(open(fname,'rb')) for fname in gmm_files]
     speakers   = [fname.split("\\")[-1].split(".gmm")[0] for fname in gmm_files]
-
-    # Read the test directory and get the test audio files
     path = "record\Record.wav"
-    path = path.strip()   
-    print(path)
-    # sr,audio = read(source + path)
+    print(f"\n Test File : {path} ")
     sr,audio = read(path)
     vector   = extract_features(audio,sr)
     log_likelihood = np.zeros(len(models)); 
-
     max_score=-100
     for i in range(len(models)):
         gmm    = models[i]  #checking with each model one by one
         scores = np.array(gmm.score(vector))
         if scores > max_score:
             max_score = scores
-
         print(gmm_files[i])
         print(scores)
         log_likelihood[i] = scores.sum()
     winner = np.argmax(log_likelihood)
     print("\tdetected as - ", speakers[winner])
-    member_name=speakers[winner]
+    detected_model=speakers[winner]
     print(max_score)
     print("-"*50)
-    acess = False
+    access = False
     if (model_name == "people"):
-        if max_score > -25.4:
-            acess = True
+        if max_score > -24.5:
+            access = True
             print("In Group")
         else :
-            acess = False
+            access = False
             print("Other")
-    elif(model_name == "sentence"):
-        pass
-
     print("#"*50)
     time.sleep(1.0)  
-    return acess ,member_name 
-
-def create_spectogram_img():
-        y, samplerate = librosa.load('record/Record.wav')
-        D = librosa.stft(y)  # STFT of y
-        S_db = librosa.amplitude_to_db(np.abs(D), ref=np.max)
-        figure=plt.figure()
-        librosa.display.specshow(S_db)
-        plt.colorbar()
-        plt.savefig('static/Css/img/spec.png')
-        plt.close()
-        im = Image.open("static/Css/img/spec.png")
-        data = io.BytesIO()
-        im.save(data, "PNG")
-        encoded_img_data = base64.b64encode(data.getvalue())
-        return encoded_img_data
+    return access ,detected_model 

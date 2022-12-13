@@ -50,36 +50,21 @@
            var string1 = "True";
            var string2 = "{{Team_Flag}}";
            var string3 = "{{Sentence_Flag}}";
-           var string4 = "{{Member_Name}}";
            var result1 = string1.localeCompare(string2);
            var result2 = string1.localeCompare(string3);
            if(result1==0){
                if(result2==0){
-                document.getElementById("test").innerHTML = "Hello {{Member_Name}}";
+                document.getElementById("test").innerHTML = "Access Allowed {{Member_Name}}";
                 document.getElementById("gif").src ="{{url_for('static', filename= 'Css/img/door_opened.gif')}}";  
                }
                else{
-                document.getElementById("test").innerHTML = "Try again {{Member_Name}}";
+                document.getElementById("test").innerHTML = "Access Denied";
                 document.getElementById("gif").src ="{{url_for('static', filename= 'Css/img/door_closed.gif')}}";  
                }
            }
            else{
-            document.getElementById("test").innerHTML = "sorry who are you ??";
+            document.getElementById("test").innerHTML = "Access Denied";
             document.getElementById("gif").src ="{{url_for('static', filename= 'Css/img/first_image.JPG')}}";  
            }
         }
      </script>
-
-    <!-- <h1 id="title"> Welcome to ,<br> Sound Recognization App !!</h1>
-    <h2 id="wanna">Press to Check</h2>
-    
-
-    
-
-
-    
-
-
-    <script src="{{url_for('static', filename= 'JS/home.js')}}"></script>  
-</body>
-</html>
