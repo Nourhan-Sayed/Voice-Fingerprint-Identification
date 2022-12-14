@@ -45,7 +45,7 @@
     <form action="/link" method="POST" id="Button">
         <button class=" record " type="submit" onclick="compareStr()">Record <i class="fa fa-microphone" style="font-size:48px;color:#2b5e84"></i></button>
     </form>
-    <script>
+    <script >
         function compareStr() {
            var string1 = "True";
            var string2 = "{{Team_Flag}}";
@@ -66,5 +66,12 @@
             document.getElementById("test").innerHTML = "Access Denied";
             document.getElementById("gif").src ="{{url_for('static', filename= 'Css/img/first_image.JPG')}}";  
            }
+           setTimeout(function() {
+            setInterval(function() {
+                $('#gif').attr('src',$('#gif').attr('src'))
+            },1)
+         }, 2000)
         }
+
+      
      </script>

@@ -12,8 +12,8 @@ def index():
 @flasklink.route('/link',  methods=['GET', 'POST'])
 def link():
     sentence_flag = False
-    record_audio_test()
-    team_flag ,member_name = test_model("people","trained_models\Team_Verification")
+    filename=record_audio_test()
+    team_flag ,member_name = test_model("people","trained_models\Team_Verification",filename)
     print(member_name)
     if (team_flag) :
         # _, sentence = test_model("sentence")
