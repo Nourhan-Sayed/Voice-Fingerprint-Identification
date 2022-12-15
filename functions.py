@@ -55,7 +55,7 @@ def record_audio_test():
     audio.terminate()
     # OUTPUT_FILENAME="Record.wav"
     
-
+    # WAVE_OUTPUT_FILENAME = "Record.wav"
     WAVE_OUTPUT_FILENAME=os.path.join("record",filename)
     trainedfilelist = open("record.txt", 'a')
     trainedfilelist.write(filename+"\n")

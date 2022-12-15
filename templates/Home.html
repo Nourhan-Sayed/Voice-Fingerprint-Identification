@@ -54,12 +54,12 @@
            var result2 = string1.localeCompare(string3);
            if(result1==0){
                if(result2==0){
-                document.getElementById("test").innerHTML = "Access Allowed {{Member_Name}}";
+                document.getElementById("test").innerHTML = "Access Allowed";
                 document.getElementById("gif").src ="{{url_for('static', filename= 'Css/img/door_opened.gif')}}";  
                }
                else{
                 document.getElementById("test").innerHTML = "Access Denied";
-                document.getElementById("gif").src ="{{url_for('static', filename= 'Css/img/door_closed.gif')}}";  
+                document.getElementById("gif").src ="{{url_for('static', filename= 'Css/img/first_image.JPG')}}";  
                }
            }
            else{
@@ -71,7 +71,5 @@
                 $('#gif').attr('src',$('#gif').attr('src'))
             },1)
          }, 2000)
-        }
-
-      
+        }   
      </script>

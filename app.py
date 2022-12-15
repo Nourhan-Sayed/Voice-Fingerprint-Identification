@@ -14,10 +14,12 @@ def link():
     sentence_flag = False
     filename=record_audio_test()
     team_flag ,member_name = test_model("people","trained_models\Team_Verification",filename)
+    if member_name in ["Other_1","Other_2","Other_3"]:
+        team_flag = False
     print(member_name)
     if (team_flag) :
         # _, sentence = test_model("sentence")
-        _, sentence = test_model("sentence",f"trained_models\Sentence_Verification\{member_name}")
+        _, sentence = test_model("sentence",f"trained_models\Sentence_Verification\{member_name}",filename)
         print(sentence)
         print("Access Allowed")
         if sentence == f"{member_name}_Open_The_Door" :

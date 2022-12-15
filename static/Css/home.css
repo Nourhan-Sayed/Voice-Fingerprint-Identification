@@ -158,19 +158,19 @@ img.animated-gif{
     margin-left: 38%;
 }
 .typing-demo {
-    width: 16ch;
-    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
-    white-space: nowrap;
-    overflow: hidden;
-    font-family: fantasy;
-    font-size: 2em;
-    height: 3rem;
-    margin-top: 2%;
-    margin-left: 13%;
-    padding: 1%;
-    color: aliceblue;
-    text-align: center;
-  }
+  width: 17ch;
+  animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: fantasy;
+  font-size: 2em;
+  height: 3rem;
+  margin-top: 2%;
+  margin-left: 10%;
+  padding: 1%;
+  color: aliceblue;
+  text-align: center;
+}
   
   @keyframes typing {
     from {
