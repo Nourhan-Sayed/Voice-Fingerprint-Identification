@@ -135,3 +135,18 @@ def test_model(model_name,modelpath,filename):
     print("#"*50)
     time.sleep(1.0)  
     return access ,detected_model 
+
+def create_MFCC_img():
+        y, samplerate = librosa.load('record/Record.wav')
+        mfccs = librosa.feature.mfcc(y=y, sr=samplerate, n_mfcc=10)
+        figure=plt.figure()
+        img = librosa.display.specshow(mfccs, x_axis='time')
+        figure.colorbar(img)
+        plt.savefig('static/Css/img/MFCC.png', bbox_inches='tight',pad_inches = 0)
+        plt.tight_layout()
+        plt.close()
+        im = Image.open('static/Css/img/MFCC.png')
+        data = io.BytesIO()
+        im.save(data, "PNG")
+        encoded_img_data = base64.b64encode(data.getvalue())
+        return encoded_img_data

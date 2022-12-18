@@ -19,15 +19,15 @@ html{
 #first_wrapper {
     display: flex;
     flex-direction: row;
-    height: 19rem;
-    padding: 1%;
+    height: 33rem;
+    padding-top: 2%;
 }
 #first{
     width: 50%;
     background-color:rgb(12 49 74 / 40%);
     margin-right: 27%;
-    border-radius: 4rem;
-    height: 18rem;
+    border-radius: 2rem;
+    height: 32rem;
     color: rgba(240, 248, 255, 0.5);
     z-index: -5;
 }
@@ -36,8 +36,8 @@ html{
 #second{
     width: 50%;
     background-color: rgb(12 49 74 / 40%);
-    border-radius: 4rem;
-    height: 18rem;
+    border-radius: 2rem;
+    height: 32rem;
     z-index: -5;
 }
 
@@ -49,7 +49,7 @@ html{
 #third{
     width: 50%;
     background-color: rgb(12 49 74 / 40%);
-    border-radius: 4rem;
+    border-radius: 2rem;
     margin-right: 27%;
     height: 18rem;
     z-index: -5;
@@ -57,19 +57,19 @@ html{
 #forth{
     width: 50%;
     background-color: rgb(12 49 74 / 40%);
-    border-radius: 4rem;
+    border-radius: 2rem;
     height: 18rem;
     z-index: -5;
 }
 
 
 .box {
-    width: 33%;
-    margin-top: -32rem;
-    margin-left: 30rem;
-    height: 20rem;
-    position: relative;
-    box-shadow: 10px 10px 42px 0 rgb(43 73 95);
+  width: 21%;
+  margin-top: -45rem;
+  margin-left: 39.5%;
+  height: 21rem;
+  position: relative;
+  box-shadow: 10px 10px 42px 0 rgb(43 73 95);
 }
 
 
@@ -107,9 +107,10 @@ html{
 }
 
 img.animated-gif{
-    width: 32%;
-    margin-left: 33%;
-    margin-top: -21%;
+  height: 22rem;
+  width: 21%;
+  margin-left: 39%;
+  margin-top: -57%;
 }
 
 .record {
@@ -135,19 +136,26 @@ img.animated-gif{
 
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&family=Calligraffitti&display=swap');
 .title{
-    font-family: 'Calligraffitti', cursive;
-    font-weight: 700;
-    font-size: 6rem;
-    z-index: 3;
-    position: absolute;
-    text-shadow: -15px 5px 20px #ced0d3;
-    top: 7%;
-    left: 49%;
-    transform: translate(-50%,-50%);
-    letter-spacing: 0.2em;
-    text-align: center;
-    color: #fff;
-    text-shadow: 5px 5px 0px #90b1e0, 10px 10px 0px #ced0d3, 15px 15px 0px #71d8eb, 20px 20px 0px #6868ac, 25px 25px 0px #6868ac, 30px 30px 0px #90b1e0;
+  font-family: 'Calligraffitti', cursive;
+  width: 100%;
+  font-weight: 700;
+  font-size: 55px;
+  z-index: 3;
+  position: absolute;
+  text-shadow: -15px 5px 20px #ced0d3;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  letter-spacing: 4px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 2px 4px 0px #90b1e0, 
+               2px 8px 0px  #6868ac, 
+               5px 12px 0px #71d8eb
+               /* 6px 16px 0px #6868ac */
+               /* 8px 16px 0px #ced0d3,  */
+               /* 10px 18px 0px #90b1e0; */
+              
 }
 
 .typing_wrapper{
@@ -158,17 +166,18 @@ img.animated-gif{
     margin-left: 38%;
 }
 .typing-demo {
-  width: 17ch;
-  animation: typing 2s steps(22), blink .5s step-end infinite alternate;
-  white-space: nowrap;
-  overflow: hidden;
-  font-family: fantasy;
-  font-size: 2em;
-  height: 3rem;
-  margin-top: 2%;
-  margin-left: 10%;
+  width: 50%;
+    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: 'Calligraffitti', cursive;
+    font-size: 2em;
+    height: 3rem;
+    margin-top: 2%;
+    margin-left: 23%;
   padding: 1%;
   color: aliceblue;
+  text-align: center;
   text-align: center;
 }
   
@@ -183,6 +192,60 @@ img.animated-gif{
       border-color: transparent
     }
   }
+
+
+  img.animated-gif1{
+    height: 13rem;
+    width: 81%;
+    margin: 0.8% 9%;
+    border-radius: 30px;
+    box-shadow: -8px -4px 13px -2px #90b1e0;
+  }
+
+.first_paragraph{
+  padding: 0% 2%;
+  margin-top: -1%;
+  font-size: 109%;
+  color: #eee;
+  letter-spacing: 1px;
+  font-family: 'Calligraffitti', cursive;
+}
+
+.first_paragraph_title{
+  font-family: 'Calligraffitti', cursive;
+    color: aliceblue;
+    margin: 0% 43%;
+}
+
+
+.third_paragraph_title{
+  font-family: 'Calligraffitti', cursive;
+  color: aliceblue;
+  margin: 0% 26%;
+}
+.picture_third_sec{
+  WIDTH: 82%;
+  height: 79%;
+  margin: 1% 8%;
+  border-radius: 30px;
+  box-shadow: -8px -4px 13px -2px #90b1e0;
+}
+
+.forth_paragraph_title{
+  font-family: 'Calligraffitti', cursive;
+  color: aliceblue;
+  margin: 0% 24%;
+
+}
+
+.picture_forth_sec{
+  WIDTH: 82%;
+  height: 79%;
+  margin: 1% 9%;
+  border-radius: 30px;
+  box-shadow: -8px -4px 13px -2px #90b1e0;
+
+}
 
 
 

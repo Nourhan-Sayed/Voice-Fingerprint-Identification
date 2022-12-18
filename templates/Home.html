@@ -15,24 +15,37 @@
 </head>
 <body  onload="compareStr()">
     
-    <div class="title">Soundify</div>
+    <div class="title">Sound Recognization</div>
 
 
     <div id="first_wrapper">
-        <div id="first">          
+        <div id="first"> 
+            <h1 class="first_paragraph_title">MFCC</h1>
+            <img class="animated-gif1" id="gif1" src="{{url_for('static', filename= 'Css/img/mfcc.gif')}}" alt="gif">  
+            <p class="first_paragraph">1. Frame the signal into short frames.<br>
+                2. For each frame calculate the periodigram of the power spectrum.<br>
+                3. Apply the mel filterbank to the power spectra, sum the energy in each filter.<br>
+                4. Take the logarithm of all filterbank energies.<br>
+                5. Take the DCT of the log filterbank energies.<br>
+                6. Keep DCT coefficients 2-13, discard the rest.<br>
+                &#x2022 sometimes the frame energy is appended to each feature vector.<br>
+                &#x2022 Delta and Delta-Delta features are usually also appended.<br>
+                &#x2022 Liftering is also commonly applied to the final features.</p>       
         </div>
-        <div id="second"></div>
+        <div id="second">
+            
+        </div>
     </div>
 
     <div id="second_wrapper">
         <div id="third">
-            <!-- {%if img_data %}
-            <body>
-                <img id="picture" src="data:image/png;base64,{{ img_data }}">
-            </body>
-            {%endif %} -->
+            <h1 class="third_paragraph_title">MEL-SPECTOGRAM</h1>
+            <img class="picture_third_sec" src="{{url_for('static', filename= 'Css/img/MFCC.png')}}">
         </div>
-        <div id="forth"></div>
+        <div id="forth">
+            <h1 class="forth_paragraph_title">PROCESSING-FLOW</h1>
+            <img class="picture_forth_sec" src="{{url_for('static', filename= 'Css/img/process.jpeg')}}">
+        </div>
     </div>
 
     <div class="box"></div>
