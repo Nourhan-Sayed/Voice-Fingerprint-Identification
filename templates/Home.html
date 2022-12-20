@@ -20,31 +20,39 @@
 
     <div id="first_wrapper">
         <div id="first"> 
-            <h1 class="first_paragraph_title">MFCC</h1>
-            <img class="animated-gif1" id="gif1" src="{{url_for('static', filename= 'Css/img/mfcc.gif')}}" alt="gif">  
-            <p class="first_paragraph">1. Frame the signal into short frames.<br>
-                2. For each frame calculate the periodigram of the power spectrum.<br>
-                3. Apply the mel filterbank to the power spectra, sum the energy in each filter.<br>
-                4. Take the logarithm of all filterbank energies.<br>
-                5. Take the DCT of the log filterbank energies.<br>
-                6. Keep DCT coefficients 2-13, discard the rest.<br>
-                &#x2022 sometimes the frame energy is appended to each feature vector.<br>
-                &#x2022 Delta and Delta-Delta features are usually also appended.<br>
-                &#x2022 Liftering is also commonly applied to the final features.</p>       
+            <h1 class="first_paragraph_title">Score</h1>
+            <img class="animated-gif1" id="gif1" src="{{url_for('static', filename= 'Css/img/scores.png')}}" alt="gif">  
+      
         </div>
         <div id="second">
-            
+            <h1 class="third_paragraph_title">Gaussian Distribution</h1>
+            <img class="picture_second_sec" src="{{url_for('static', filename= 'Css/img/Normal.png')}}">
+           
         </div>
     </div>
 
     <div id="second_wrapper">
         <div id="third">
-            <h1 class="third_paragraph_title">MEL-SPECTOGRAM</h1>
-            <img class="picture_third_sec" src="{{url_for('static', filename= 'Css/img/MFCC.png')}}">
+            <h1 class="third_paragraph_title">MFCC</h1>
+            <img class="picture_third_sec" src="{{url_for('static', filename= 'Css/img/mfcc.gif')}}"> 
+            <p class="first_paragraph">1. Frame the signal, and compute fourier.<br>
+                2. Apply mel filterbank to power spectra, sum energy bands.<br>
+                3. Take the log of all filterbank energies, then take DCT.<br>
+                4. Keep DCT coefficients 2-13, discard the rest.<br>
+                &#x2022 Delta and Delta-Delta features are usually also appended, then applying liftering.<br></p> 
         </div>
         <div id="forth">
-            <h1 class="forth_paragraph_title">PROCESSING-FLOW</h1>
-            <img class="picture_forth_sec" src="{{url_for('static', filename= 'Css/img/process.jpeg')}}">
+            <h1 class="forth_paragraph_title">GMM</h1>
+            <img class="picture_forth_sec" src="{{url_for('static', filename= 'Css/img/gmm2.png')}}">
+        </div>
+        <div id="fifth">
+            <h1 class="first_paragraph_title">Gaussian mixture model</h1>
+            <img class="animated-gif2" id="gif1" src="{{url_for('static', filename= 'Css/img/gmm.gif')}}" alt="gif">  
+            <p class="first_paragraph">
+                
+                &#x2022 Gaussian mixture model is a probabilistic model that assumes all the data points are generated from a mixture of a finite number of Gaussian distributions.<br>
+
+                &#x2022 GMM is an unsupervised Clustering model.</p>       
         </div>
     </div>
 
