@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Recognization</title>
+    <link rel="stylesheet" href="{{url_for('static', filename= 'Css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename= 'Css/home.css')}}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Lobster&family=Ms+Madi&family=Playfair+Display:ital,wght@1,400;1,500&family=Sansita+Swashed&family=Tapestry&family=Truculenta:opsz,wght@12..72,700&family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+</head>
+<body  onload="compareStr()">
+    
+    <div class="title">Sound Recognization</div>
+
+
+    <div id="first_wrapper">
+        <div id="first"> 
+            <h1 class="first_paragraph_title">Score</h1>
+            <img class="animated-gif1" id="gif1" src="{{url_for('static', filename= 'Css/img/scores.png')}}" alt="gif">  
+      
+        </div>
+        <div id="second">
+            <h1 class="third_paragraph_title">Gaussian Distribution</h1>
+            <img class="picture_second_sec" src="{{url_for('static', filename= 'Css/img/Normal.png')}}">
+           
+        </div>
+    </div>
+
+    <div id="second_wrapper">
+        <div id="third">
+            <h1 class="third_paragraph_title">MFCC</h1>
+            <img class="picture_third_sec" src="{{url_for('static', filename= 'Css/img/mfcc.gif')}}"> 
+            <p class="first_paragraph">1. Frame the signal, and compute fourier.<br>
+                2. Apply mel filterbank to power spectra, sum energy bands.<br>
+                3. Take the log of all filterbank energies, then take DCT.<br>
+                4. Keep DCT coefficients 2-13, discard the rest.<br>
+                &#x2022 Delta and Delta-Delta features are usually also appended, then applying liftering.<br></p> 
+        </div>
+        <div id="forth">
+            <h1 class="forth_paragraph_title">MFCC Spectogram</h1>
+            <img class="picture_forth_sec" src="{{url_for('static', filename= 'Css/img/MFCC.png')}}">
+        </div>
+        <div id="fifth">
+            <h1 class="first_paragraph_title">Gaussian mixture model</h1>
+            <img class="animated-gif2" id="gif1" src="{{url_for('static', filename= 'Css/img/gmm.gif')}}" alt="gif">  
+            <p class="first_paragraph">
+                
+                &#x2022 Gaussian mixture model is a probabilistic model that assumes all the data points are generated from a mixture of a finite number of Gaussian distributions.<br>
+
+                &#x2022 GMM is an unsupervised Clustering model.</p>       
+        </div>
+    </div>
+
+    <div class="box"></div>
+    <img class="animated-gif" id="gif" src="{{url_for('static', filename= 'Css/img/first_image.JPG')}}" alt="gif">
+
+    <div class="typing_wrapper">
+    <div class="typing-demo" id="test">Inter Password</div>
+    </div> 
+     
+    <form action="/link" method="POST" id="Button">
+        <button class=" record " type="submit" onclick="compareStr()">Record <i class="fa fa-microphone" style="font-size:48px;color:#2b5e84"></i></button>
+    </form>
+    <script >
+        function compareStr() {
+           var string1 = "True";
+           var string2 = "{{Team_Flag}}";
+           var string3 = "{{Sentence_Flag}}";
+           var result1 = string1.localeCompare(string2);
+           var result2 = string1.localeCompare(string3);
+           if(result1==0){
+               if(result2==0){
+                document.getElementById("test").innerHTML = "Access Allowed";
+                document.getElementById("gif").src ="{{url_for('static', filename= 'Css/img/door_opened.gif')}}";  
+               }
+               else{
+                document.getElementById("test").innerHTML = "Access Denied";
+                document.getElementById("gif").src ="{{url_for('static', filename= 'Css/img/first_image.JPG')}}";  
+               }
+           }
+           else{
+            document.getElementById("test").innerHTML = "Access Denied";
+            document.getElementById("gif").src ="{{url_for('static', filename= 'Css/img/first_image.JPG')}}";  
+           }
+           setTimeout(function() {
+            setInterval(function() {
+                $('#gif').attr('src',$('#gif').attr('src'))
+            },1)
+         }, 2000)
+        }   
+     </script>
