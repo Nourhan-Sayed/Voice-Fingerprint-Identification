@@ -5,9 +5,9 @@
 
 ## Table of contents:
 
-- [Voice Fingerprint Principles](#Voice-Fingerprint-Principles)
+- [Voice Fingerprint Principles](#voice-fingerprint-principles)
 - [Project full Demo](#project-full-demo)
-- [Dynamic E-Poster Graphs](#Dynamic-E-Poster-Graphs)
+- [Dynamic E-Poster Graphs](#dynamic-e-poster-graphs)
 - [Project Structure](#project-structure)
 - [Run The Project](#run-the-project)
 - [Team Members](#team-members)
@@ -20,22 +20,19 @@ The **Audio Features** are extracted from the **Audio Signal** using **Fourier T
 ***What is MFCC?***
 - A set of features used in speech recognition and audio information retrieval.
 - Represent the spectral envelope of a sound by measuring the magnitude of the spectral components
-
 - Represent the short-term power spectrum of a sound by combining a number of adjacent frequency bands
-
 - Represent the spectral shape of a sound in the frequency domain
-- Calculated by taking the Discrete Fourier Transform of a signal and then taking the logarithm of the power spectrum
-
-1. Frame the signal, and compute fourier.
-2. Apply mel filterbank to power spectra, sum energy bands.
-3. Take the log of all filterbank energies, then take Discrete Fourier Transform (DCT).
-4. Keep DCT coefficients 2-13, discard the rest.
-5. Take the logarithm of the power spectrum
-• Delta and Delta-Delta features are usually also appended, then applying liftering.
-
+- Calculation Steps
+    1. Frame the signal, and compute fourier.
+    2. Apply mel filterbank to power spectra, sum energy bands.
+    3. Take the log of all filterbank energies, then take Discrete Fourier Transform (DCT).
+    4. Keep DCT coefficients 2-13, discard the rest.
+    5. Take the logarithm of the power spectrum
+    • Delta and Delta-Delta features are usually also appended, then applying liftering.
+    
+ ![mfcc](https://user-images.githubusercontent.com/84602951/220436300-47e48fef-e70a-4e96-a8b8-32bad3940a59.gif)
+  
 You can read more about MFCC [here](https://haythamfayek.com/2016/04/21/speech-processing-for-machine-learning.html)
-img
-
     
 ### Model Training
 ***Gaussian Mixture Model (GMM)***
@@ -48,17 +45,30 @@ img
 - The EM algorithm iteratively estimates the parameters of the Gaussian distributions by maximizing the likelihood of the observed data.
 - The GMM model is then used to classify the speaker by comparing the spectral characteristics of the voice with the estimated parameters of the Gaussian distributions.
 
-img
+![gmm2](https://user-images.githubusercontent.com/84602951/220436625-d07f20a7-94a5-4519-94ea-a55b28d9f108.PNG)
 
 You can read more about GMM [here](https://www.researchgate.net/publication/274963749_Speaker_Identification_Using_GMM_with_MFCC)
 
 ## Project full Demo
 video
 ## Dynamic E-Poster Graphs
+### MFCC Spectogram
+Spectogram represents the Mel-Frequency Cepstral Coefficients of the user audio
+![MFCC](https://user-images.githubusercontent.com/84602951/220437312-d5f64abe-370e-40b8-bf55-93b2bb2c2a60.png)
 
+### Gaussian Normal Distribution
+Represents the normal distribution of mfcc feauture of each user of the team and the input user voice to represent which team fingerprint is closer to the input audio based on principles of GMM Model.
+![Normal](https://user-images.githubusercontent.com/84602951/220438245-ca8697bf-4ca0-4385-8448-bc484b5f8b6d.png)
+
+### Scores Bar Chart
+Bar chart represents scores of gmm models to represent which score is closer to the team scores and compares them with the threshold of dissimilarity.
+![scores](https://user-images.githubusercontent.com/84602951/220438689-e68fd2b6-6fbf-4ab7-a4e2-a59357929736.png)
 
 
 ## Project Structure
+
+![process](https://user-images.githubusercontent.com/84602951/220436969-f1eb2bb3-c78a-413d-8d30-944ed46cfa9e.jpeg)
+
 - Frontend :
   - HTML
   - CSS
@@ -66,7 +76,7 @@ video
 - Backend :
   - Flask (Python)
 - Machine Learning Model Training
-    - Python
+    - GMM Model (Python)
 
 * Used Libraries
     * python_speech_features
