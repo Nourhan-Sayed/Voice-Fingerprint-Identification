@@ -69,6 +69,14 @@ video
 
 
 ## Project Structure
+* Frontend takes the user audio and sends it to the backend.
+* Backend extracts the audio features and sends them to the machine learning model.
+* Machine learning model compares the input audio features with the team audio features in team verification step
+* If the Voice Fingerprint is verified(From Registered team Users), the machine learning model compares the input audio features with the user audio features in sentence verification step.
+* Door is opened only if the Voice Fingerprint(User in team) is verified and the sentence(Open The Door) is verified.
+* Then Machine learning model returns the result to the backend and the backend returns the result to the frontend
+* Frontend displays the result to the user and the door is opened if the result is verified.
+
 
 ![process](https://user-images.githubusercontent.com/84602951/220436969-f1eb2bb3-c78a-413d-8d30-944ed46cfa9e.jpeg)
 
