@@ -1,0 +1,11 @@
+Flask
+flask-cors
+numpy
+scipy
+pickle
+python_speech_features
+librosa
+matplotlib
+sklearn
+pyaudio
+wave

@@ -4,7 +4,6 @@ import pickle
 import numpy as np
 import os
 import wave
-import pyaudio
 import os
 import wave
 import time
