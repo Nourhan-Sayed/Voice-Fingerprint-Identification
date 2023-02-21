@@ -53,15 +53,18 @@ You can read more about GMM [here](https://www.researchgate.net/publication/2749
 video
 ## Dynamic E-Poster Graphs
 ### MFCC Spectogram
-Spectogram represents the Mel-Frequency Cepstral Coefficients of the user audio
+* Spectogram represents the Mel-Frequency Cepstral Coefficients of the user audio.
+
 ![MFCC](https://user-images.githubusercontent.com/84602951/220437312-d5f64abe-370e-40b8-bf55-93b2bb2c2a60.png)
 
 ### Gaussian Normal Distribution
-Represents the normal distribution of mfcc feauture of each user of the team and the input user voice to represent which team fingerprint is closer to the input audio based on principles of GMM Model.
+* Represents the normal distribution of mfcc feauture of each user of the team and the input user voice to represent which team fingerprint is closer to the input audio based on principles of GMM Model.
+
 ![Normal](https://user-images.githubusercontent.com/84602951/220438245-ca8697bf-4ca0-4385-8448-bc484b5f8b6d.png)
 
 ### Scores Bar Chart
-Bar chart represents scores of gmm models to represent which score is closer to the team scores and compares them with the threshold of dissimilarity.
+* Bar chart represents scores of gmm models to represent which score is closer to the team scores and compares them with the threshold of dissimilarity.
+
 ![scores](https://user-images.githubusercontent.com/84602951/220438689-e68fd2b6-6fbf-4ab7-a4e2-a59357929736.png)
 
 
